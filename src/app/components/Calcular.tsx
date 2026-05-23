@@ -34,22 +34,37 @@ export default function Calcular() {
                 }
                 calculoFinal = num1 / num2;
                 break;
+            case '%':
+                if (num2 === 0) {
+                    alert('Não é possível calcular o módulo por zero.');
+                    return;
+                }
+                calculoFinal = num1 % num2;
+                break;
+            case '^':
+                calculoFinal = Math.pow(num1, num2);
+                break;
+            case 'delete':
+                setNumero1('');
+                setNumero2('');
+                setResultado(0);
+                break;
             default:
                 break;
         }
         setResultado(calculoFinal);
     };
     return (
-        <div className="roboto-condensed p-4 flex flex-col min-h-screen items-center justify-center bg-gray-950 text-white">
+        <div className="arimo p-4 flex flex-col min-h-screen items-center justify-center bg-[#080808] text-white">
             <h1 className="text-2xl md:text-3xl mt-5 font-bold">Simple Calculator</h1>
 
             <hr className="border-t border-white w-full max-w-xs md:max-w-md mx-auto mb-6 mt-5"></hr>
 
             <div className="w-full max-w-md p-6 md:p-10 bg-amber-400 border-amber-50 border-2 rounded-2xl text-xl md:text-2xl font-bold text-center">
-                <span className="block mb-4">Operações Matemáticas</span>
+                <span className="block text-2xl mb-4">Operações Matemáticas</span>
 
                 <div className="mt-6 text-left">
-                    <label htmlFor="numeroInput1" className="block mb-2">Número 1:</label>
+                    <label htmlFor="numeroInput1" className="block mb-2 text-lg">Número 1:</label>
                     <input
                         type="number"
                         id="numeroUm"
@@ -60,7 +75,7 @@ export default function Calcular() {
                 </div>
 
                 <div className="mt-6 text-left">
-                    <label htmlFor="numeroInput2" className="block mb-2">Número 2:</label>
+                    <label htmlFor="numeroInput2" className="block mb-2 text-lg">Número 2:</label>
                     <input
                         type="number"
                         id="numeroDois"
@@ -73,18 +88,28 @@ export default function Calcular() {
 
             <div className="mt-8 p-4 bg-amber-400 rounded-lg  border-amber-50 border-2 w-full max-w-md">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                    <button className="bg-white text-black py-4 rounded-md font-bold text-2xl cursor-pointer hover:bg-gray-200 transition-colors" onClick={() => handleCalcular('+')}>+</button>
-                    <button className="bg-white text-black py-4 rounded-md font-bold text-2xl cursor-pointer hover:bg-gray-200 transition-colors" onClick={() => handleCalcular('-')}>-</button>
-                    <button className="bg-white text-black py-4 rounded-md font-bold text-2xl cursor-pointer hover:bg-gray-200 transition-colors" onClick={() => handleCalcular('*')}>x</button>
-                    <button className="bg-white text-black py-4 rounded-md font-bold text-2xl cursor-pointer hover:bg-gray-200 transition-colors" onClick={() => handleCalcular('/')}>/</button>
+                    <button className="bg-white text-black py-4 rounded-md font-bold text-lg cursor-pointer hover:bg-gray-200 transition-colors"
+                        onClick={() => handleCalcular('+')}>+</button>
+                    <button className="bg-white text-black py-4 rounded-md font-bold text-lg cursor-pointer hover:bg-gray-200 transition-colors"
+                        onClick={() => handleCalcular('-')}>-</button>
+                    <button className="bg-white text-black py-4 rounded-md font-bold text-lg cursor-pointer hover:bg-gray-200 transition-colors"
+                        onClick={() => handleCalcular('*')}>x</button>
+                    <button className="bg-white text-black py-4 rounded-md font-bold text-lg cursor-pointer hover:bg-gray-200 transition-colors"
+                        onClick={() => handleCalcular('/')}>/</button>
+                    <button className="bg-white text-black py-4 rounded-md font-bold text-lg cursor-pointer hover:bg-gray-200 transition-colors"
+                        onClick={() => handleCalcular('%')}>%</button>
+                    <button className="bg-white text-black py-4 rounded-md font-bold text-lg cursor-pointer hover:bg-gray-200 transition-colors"
+                        onClick={() => handleCalcular('^')}>^</button>
+                    <button className="bg-red-500 text-white py-4 rounded-md font-bold text-lg cursor-pointer hover:bg-red-600 transition-colors col-span-2"
+                        onClick={() => handleCalcular('delete')}>Limpar</button>
                 </div>
             </div>
 
             <div className="mt-8 p-6 bg-amber-400 rounded-lg font-bold text-2xl  border-amber-50 border-2 w-full max-w-md text-center">
-                <p className="text-black">Resultado: {resultado}</p>
+                <p className="text-black text-lg">Resultado: {resultado}</p>
             </div>
 
-            <footer className="mt-10 text-white">&copy; {new Date().getFullYear()} <a href='https://github.com/LokiiiGo/simple-calculator'>Simple Calculator - Desenvolvido por Lucas Chambi</a></footer>
+            <footer className="mt-10 text-[12px] sm:text-lg text-white">&copy; {new Date().getFullYear()} <a href='https://github.com/LokiiiGo/simple-calculator'>Simple Calculator - Desenvolvido por Lucas Chambi</a></footer>
         </div>
     )
 };
