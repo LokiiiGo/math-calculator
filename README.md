@@ -88,13 +88,3 @@ Pré-requisitos:
 ## Observações de UX/Qualidade
 - A interface foi pensada para ser clara: inputs bem destacados e botões com feedback visual (hover).
 - O componente é “auto-contido” e fácil de manter/estender (novas operações podem ser adicionadas no `switch`).
-
----
-
-## Créditos
-Desenvolvido por **Lucas Chambi**.
-
----
-
-## Status
-Em desenvolvimento/entrega em andamento (projeto funcional com operações e validações básicas).
