@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
+import { Arimo } from "next/font/google";
 import "./globals.css";
+
+const arimo = Arimo ({
+  variable: "--font-arimo",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Calculadora Simples",
@@ -14,14 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-          <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
-          <body
-            className="antialiased"
-          >
-            {children}
-          </body>
-        </html>
-        );
+      <body
+        className={`${arimo.variable} antialiased`}
+      >
+        {children}
+      </body>
+    </html>
+  );
 }
