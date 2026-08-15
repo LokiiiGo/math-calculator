@@ -56,7 +56,7 @@ export default function Calcular() {
     };
     return (
         <div className="arimo p-4 flex flex-col min-h-screen items-center justify-center bg-[#080808] text-white">
-            <h1 className="text-2xl md:text-3xl mt-5 font-bold">Simple Calculator</h1>
+            <h1 className="text-2xl md:text-3xl mt-5 font-bold">Math Calculator</h1>
 
             <hr className="border-t border-white w-full max-w-xs md:max-w-md mx-auto mb-6 mt-5"></hr>
 
