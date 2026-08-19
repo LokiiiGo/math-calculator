@@ -8,7 +8,7 @@ const arimo = Arimo ({
 });
 
 export const metadata: Metadata = {
-  title: "Calculadora Simples",
+  title: "Math Calculator",
   description: "Uma calculadora para operações matemáticas simples.",
   icons: "/asset/calculator.png",
 };
