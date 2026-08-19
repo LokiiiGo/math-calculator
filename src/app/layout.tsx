@@ -10,7 +10,7 @@ const arimo = Arimo ({
 export const metadata: Metadata = {
   title: "Math Calculator",
   description: "Uma calculadora para operações matemáticas simples.",
-  icons: "/asset/calculator.png",
+  icons: "/asset/calculadora.png",
 };
 
 export default function RootLayout({
