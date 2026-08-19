@@ -12,7 +12,7 @@ export default function Calcular() {
         const num2 = parseFloat(numero2.replace(',', '.'));
 
         if (isNaN(num1) || isNaN(num2)) {
-            alert('Por favor, digite números válidos em ambos os campos.');
+            alert('Please enter valid numbers in both fields.');
             return;
         }
 
@@ -29,14 +29,14 @@ export default function Calcular() {
                 break;
             case '/':
                 if (num2 === 0) {
-                    alert('Não é possível dividir por zero.');
+                    alert('It is not possible to divide by zero.');
                     return;
                 }
                 calculoFinal = num1 / num2;
                 break;
             case '%':
                 if (num2 === 0) {
-                    alert('Não é possível calcular o módulo por zero.');
+                    alert('It is not possible to calculate the absolute value using zero.');
                     return;
                 }
                 calculoFinal = num1 % num2;
@@ -61,10 +61,10 @@ export default function Calcular() {
             <hr className="border-t border-white w-full max-w-xs md:max-w-md mx-auto mb-6 mt-5"></hr>
 
             <div className="w-full max-w-md p-6 md:p-10 bg-amber-400 border-amber-50 border-2 rounded-2xl text-xl md:text-2xl font-bold text-center">
-                <span className="block text-2xl mb-4">Operações Matemáticas</span>
+                <span className="block text-2xl mb-4">Mathematical Operations</span>
 
                 <div className="mt-6 text-left">
-                    <label htmlFor="numeroInput1" className="block mb-2 text-lg">Número 1:</label>
+                    <label htmlFor="numeroInput1" className="block mb-2 text-lg">Number 1:</label>
                     <input
                         type="number"
                         id="numeroUm"
@@ -75,7 +75,7 @@ export default function Calcular() {
                 </div>
 
                 <div className="mt-6 text-left">
-                    <label htmlFor="numeroInput2" className="block mb-2 text-lg">Número 2:</label>
+                    <label htmlFor="numeroInput2" className="block mb-2 text-lg">Number 2:</label>
                     <input
                         type="number"
                         id="numeroDois"
@@ -101,15 +101,15 @@ export default function Calcular() {
                     <button className="bg-white text-black py-4 rounded-md font-bold text-lg cursor-pointer hover:bg-gray-200 transition-colors"
                         onClick={() => handleCalcular('^')}>^</button>
                     <button className="bg-red-500 text-white py-4 rounded-md font-bold text-lg cursor-pointer hover:bg-red-600 transition-colors col-span-2"
-                        onClick={() => handleCalcular('delete')}>Limpar</button>
+                        onClick={() => handleCalcular('delete')}>Reset</button>
                 </div>
             </div>
 
             <div className="mt-8 p-6 bg-amber-400 rounded-lg font-bold text-2xl  border-amber-50 border-2 w-full max-w-md text-center">
-                <p className="text-black text-lg">Resultado: {resultado}</p>
+                <p className="text-black text-lg">Result: {resultado}</p>
             </div>
 
-            <footer className="mt-10 text-[12px] sm:text-lg text-white">&copy; {new Date().getFullYear()} <a href='https://github.com/LokiiiGo/simple-calculator'>Simple Calculator - Desenvolvido por Lucas Chambi</a></footer>
+            <footer className="mt-10 text-sm sm:text-lg text-white">&copy; {new Date().getFullYear()} Math Calculator - Developed by Lucas Calle</footer>
         </div>
     )
 };
